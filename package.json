@@ -1,0 +1,24 @@
+{
+  "name": "yahoo-financial-data",
+  "version": "1.0.8",
+  "description": "Npm module for node.js giving the ability to access real time financial data from yahoo finance.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "yahoofinancialdata",
+    "yahoo",
+    "finance",
+    "stocks",
+    "price",
+    "quotes",
+    "financialdata"
+  ],
+  "author": "Derek James",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.2.0"
+  }
+}

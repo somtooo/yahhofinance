@@ -1,0 +1,259 @@
+{
+  "analystRecomendation": {
+    "file": "analystRecomendation.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "assetType": {
+    "file": "assetType.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "companyName": {
+    "file": "companyName.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "dividendRate": {
+    "file": "dividendRate.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "dividendYield": {
+    "file": "dividendYield.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "earningsGrowth": {
+    "file": "earningsGrowth.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "exchange": {
+    "file": "exchange.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "fiftyDayAverage": {
+    "file": "fiftyDayAverage.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "fiftyTwoWeekHigh": {
+    "file": "fiftyTwoWeekHigh.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "fiftyTwoWeekLow": {
+    "file": "fiftyTwoWeekLow.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "fiveYearAvgDividendYield": {
+    "file": "fiveYearAvgDividendYield.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "forwardPE": {
+    "file": "forwardPE.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "freeCashflow": {
+    "file": "freeCashflow.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "grossMargins": {
+    "file": "grossMargins.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "grossProfits": {
+    "file": "grossProfits.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "history": {
+    "file": "history.js",
+    "cases": 3,
+    "pass": 3,
+    "fail": 0
+  },
+  "marketState": {
+    "file": "marketState.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "martetCap": {
+    "file": "martetCap.js",
+    "cases": 2,
+    "pass": 2,
+    "fail": 0
+  },
+  "numberOfAnalystOpinions": {
+    "file": "numberOfAnalystOpinions.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "operatingCashflow": {
+    "file": "operatingCashflow.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "operatingMargins": {
+    "file": "operatingMargins.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "postMarketPrice": {
+    "file": "postMarketPrice.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "preMarketPrice": {
+    "file": "preMarketPrice.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "price": {
+    "file": "price.js",
+    "cases": 2,
+    "pass": 2,
+    "fail": 0
+  },
+  "priceToBook": {
+    "file": "priceToBook.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "profitMargins": {
+    "file": "profitMargins.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "returnOnAssets": {
+    "file": "returnOnAssets.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "returnOnEquity": {
+    "file": "returnOnEquity.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "revenueGrowth": {
+    "file": "revenueGrowth.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "revenuePerShare": {
+    "file": "revenuePerShare.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "targetHighPrice": {
+    "file": "targetHighPrice.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "targetLowPrice": {
+    "file": "targetLowPrice.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "targetMeanPrice": {
+    "file": "targetMeanPrice.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "targetMedianPrice": {
+    "file": "targetMedianPrice.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "totalCash": {
+    "file": "totalCash.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "totalCashPerShare": {
+    "file": "totalCashPerShare.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "totalDebt": {
+    "file": "totalDebt.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "totalRevenue": {
+    "file": "totalRevenue.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "trailingPE": {
+    "file": "trailingPE.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "twoHundredDayAverage": {
+    "file": "twoHundredDayAverage.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "valueOf": {
+    "file": "valueOf.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "volume": {
+    "file": "volume.js",
+    "cases": 0,
+    "pass": 0,
+    "fail": 0
+  },
+  "TOTAL": {
+    "cases": 7,
+    "pass": 7,
+    "fail": 0
+  }
+}
