@@ -95,16 +95,16 @@
     "pass": 3,
     "fail": 0
   },
+  "marketCap": {
+    "file": "marketCap.js",
+    "cases": 2,
+    "pass": 2,
+    "fail": 0
+  },
   "marketState": {
     "file": "marketState.js",
     "cases": 0,
     "pass": 0,
-    "fail": 0
-  },
-  "martetCap": {
-    "file": "martetCap.js",
-    "cases": 2,
-    "pass": 2,
     "fail": 0
   },
   "numberOfAnalystOpinions": {

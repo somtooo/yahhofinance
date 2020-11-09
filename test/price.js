@@ -9,15 +9,15 @@ var file = path.basename(__filename).split(".js")[0]
 describe(file + "-TC", () => {
 
     beforeEach(function(done) {
-        FUNCTIONS.price.cases = FUNCTIONS.price.cases += 1;
+        FUNCTIONS[file].cases = FUNCTIONS[file].cases += 1;
         done();
     });
     afterEach(function(done) {
         if (this.currentTest.state == 'passed') {
-            FUNCTIONS.price.pass = FUNCTIONS.price.pass += 1;
+            FUNCTIONS[file].pass = FUNCTIONS[file].pass += 1;
         }
         if (this.currentTest.state == 'failed') {
-            FUNCTIONS.price.fail = FUNCTIONS.price.fail += 1;
+            FUNCTIONS[file].fail = FUNCTIONS[file].fail += 1;
         }
         done();
     });

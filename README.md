@@ -13,7 +13,7 @@ var yahoo = require('yahoo-financial-data');
 ```
 
 ```bash
-yahoo.quote('AAPL', function (err, data) {
+yahoo.price('AAPL', function (err, data) {
     // 119.65
 });
 ```

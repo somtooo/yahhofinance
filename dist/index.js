@@ -66,7 +66,7 @@ class YahooFinancialData {
             }
         });
     }
-    martetCap(ticker, completion) {
+    marketCap(ticker, completion) {
         this.yahooFinanceDataV10.price(ticker, function (err, data) {
             if (!err) 
             {
