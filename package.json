@@ -1,7 +1,7 @@
 {
   "name": "yahoo-financial-data",
-  "version": "1.0.8",
-  "description": "Npm module for node.js giving the ability to access real time financial data from yahoo finance.",
+  "version": "1.1.0",
+  "description": "Node.js module for accessing real time financial data from yahoo finance.",
   "main": "dist/index.js",
   "scripts": {
     "test": "mocha"
