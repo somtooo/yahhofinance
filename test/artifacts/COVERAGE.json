@@ -239,21 +239,15 @@
     "pass": 0,
     "fail": 0
   },
-  "valueOf": {
-    "file": "valueOf.js",
-    "cases": 0,
-    "pass": 0,
-    "fail": 0
-  },
   "volume": {
     "file": "volume.js",
-    "cases": 0,
-    "pass": 0,
+    "cases": 2,
+    "pass": 2,
     "fail": 0
   },
   "TOTAL": {
-    "cases": 11,
-    "pass": 11,
+    "cases": 13,
+    "pass": 13,
     "fail": 0
   }
 }

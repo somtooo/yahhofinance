@@ -18,6 +18,24 @@ describe(file + "-TC", () => {
 		done();
 	});
 
+	var TEST_CASE_DESC = file + "() should return an integer greater than 0 on success"
+    it(TEST_CASE_DESC, (done) => {
+        yahoo.volume('AAPL', function(err, data) {
+			if (!err) data.should.to.be.at.least(1)
+            done();
+        })
+    });
+
+    var TEST_CASE_DESC = file + "() should return error if ticker doesnt exist"
+    it(TEST_CASE_DESC, (done) => {
+        yahoo.volume('abcdefghijk', function(err, data) {
+            err.should.not.equal(null);
+            err.should.have.property('code');
+            err.should.have.property('description');
+            done();
+        })
+    });
+
 
 
 });

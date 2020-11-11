@@ -48,6 +48,7 @@ before((done) => {
         && !funcs[i].includes("propertyIsEnumerable")
         && !funcs[i].includes("isPrototypeOf")
         && !funcs[i].includes("hasOwnProperty")
+        && !funcs[i].includes("valueOf")
         )
             FUNCTIONS[funcs[i]] = {
                 file: funcs[i] + ".js",
