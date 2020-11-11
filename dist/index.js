@@ -21,11 +21,23 @@ class YahooFinancialData {
             }
         });
     }
-    history(ticker, startDate, endDate, interval, completion) {
+    history(ticker, value, startDate, endDate, interval, completion) {
+        var values = ['high', 'low', 'open', 'close', 'volume']
+        var intervals = ["1d","5d","1mo","3mo","6mo","1y","2y","5y","10y","ytd","max"]
+        if (!values.includes(value)) {
+            var err = {'code': "Bad args", 'description': "Invalid Value field"}
+            completion(err, null);
+            return
+        }
+        if (!intervals.includes(interval)) {
+            var err = {'code': "Bad args", 'description': "Invalid Interval field"}
+            completion(err, null);
+            return
+        }
         this.yahooFinanceDataV8.price(ticker, startDate, endDate, interval, function(err, data) {
             if (!err) 
             {
-                completion(err, data[0]["indicators"]["quote"][0]["close"])
+                completion(err, data[0]["indicators"]["quote"][0][value])
             }
             else {
                 completion(err, null)

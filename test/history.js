@@ -21,15 +21,44 @@ describe(file + "-TC", () => {
         done();
     });
 
+
+
     it(file + "() should return an array of values", (done) => {
-        yahoo.history('AAPL', '2020-01-01', '2020-02-01', '1d', function(err, data) {
+        yahoo.history('AAPL', 'close', '2020-01-01', '2020-02-01', '1d', function(err, data) {
+            data.should.be.an('array');
+            done();
+        })
+    });
+    it(file + "() should return an array of values", (done) => {
+        yahoo.history('AAPL', 'volume', '2020-01-01', '2020-02-01', '1d', function(err, data) {
+            data.should.be.an('array');
+            done();
+        })
+    });
+    it(file + "() should return an array of values", (done) => {
+        yahoo.history('AAPL', 'close', '2020-01-01', '2020-02-01', '5d', function(err, data) {
+            data.should.be.an('array');
+            done();
+        })
+    });
+    it(file + "() should return an array of values", (done) => {
+        yahoo.history('AAPL', 'volume', '2020-01-01', '2020-02-01', '5d', function(err, data) {
             data.should.be.an('array');
             done();
         })
     });
 
     it(file + "() should return an error if ticker(1st) argument is bad", (done) => {
-        yahoo.history('abcdefghij', '2020-01-01', '2020-02-01', '1d', function(err, data) {
+        yahoo.history('abcdefghij', 'close', '2020-01-01', '2020-02-01', '1d', function(err, data) {
+            err.should.not.equal(null);
+            err.should.have.property('code');
+            err.should.have.property('description');
+            done();
+        })
+    });
+
+    it(file + "() should return an error if value(2nd) argument is bad", (done) => {
+        yahoo.history('AAPL', 'abcdefghij', '2020-01-01', '2020-02-01', '1d', function(err, data) {
             err.should.not.equal(null);
             err.should.have.property('code');
             err.should.have.property('description');
@@ -38,7 +67,7 @@ describe(file + "-TC", () => {
     });
 
     it(file + "() should return an error if interval(4th) argument is bad", (done) => {
-        yahoo.history('AAPL', '2020-01-01', '2020-02-01', 'abc', function(err, data) {
+        yahoo.history('AAPL', 'close', '2020-01-01', '2020-02-01', 'abc', function(err, data) {
             err.should.not.equal(null);
             err.should.have.property('code');
             err.should.have.property('description');
