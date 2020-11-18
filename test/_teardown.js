@@ -29,7 +29,7 @@ after((done) => {
         write += "// Available; "
         if (global.FUNCTIONS[func].pass == 0)
         {
-            availableFuncs.push( write + "Not Yet Tested" );
+            availableFuncs.push( write + "Testing In Progress" );
         }
         else {
             availableFuncs.push( write );
