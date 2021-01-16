@@ -1,5 +1,3 @@
-maxAge
-priceHint
 previousClose
 open
 dayLow
