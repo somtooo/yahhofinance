@@ -3,6 +3,7 @@ const multer = require('multer');
 const fs = require('fs');
 const path = require('path');
 const db = require('./db/mongodb');
+const port = process.env.PORT;
 const {
   updateDb,
   buildAndPopulateDatabase,
@@ -45,8 +46,8 @@ app.post(
   }
 );
 
-app.listen('3000', () => {
-  console.log('Running on port 3000');
+app.listen(port || 3000, () => {
+  console.log('Server is up on port ' + port);
 });
 
 function getArrPromise(filename) {
