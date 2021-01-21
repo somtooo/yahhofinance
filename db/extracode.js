@@ -55,3 +55,9 @@ for (x of arr) {
     });
   });
 }
+
+// buildAndPopulateDatabase(['AAPL', 'MSFT', 'JNJ', 'AMZN']);
+
+// schedule.scheduleJob({ hour: 15, minute: 35, dayOfWeek: 6 }, function () {
+//   updateDb(['AAPL', 'MSFT', 'JNJ', 'AMZN']);
+// });
