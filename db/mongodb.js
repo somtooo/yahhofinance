@@ -1,6 +1,7 @@
 const mongodb = require('mongodb');
 const MongoClient = mongodb.MongoClient;
-const connectionURL = 'mongodb://127.0.0.1:27017';
+const connectionURL =
+  'mongodb+srv://beatalltech:messi.360@cluster0.5iqzy.mongodb.net/stock-data?retryWrites=true&w=majority';
 const databaseName = 'stock-data-tracker';
 
 async function connectAndOperateOnDb(arr, operation) {
