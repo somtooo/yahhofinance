@@ -4,7 +4,9 @@ const Json2csvParser = require('json2csv').Parser;
 const fs = require('fs');
 
 let data;
-const connectionURL = process.env.MONGODB_URI;
+const connectionURL =
+  process.env.MONGODB_URI ||
+  'mongodb+srv://beatalltech:messi.360@cluster0.5iqzy.mongodb.net/stock-data?retryWrites=true&w=majority';
 const databaseName = 'stock-data-tracker';
 
 async function connectAndOperateOnDb(arr, operation) {
