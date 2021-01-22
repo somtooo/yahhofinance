@@ -48,7 +48,7 @@ app.post(
       let arr = await getArrPromise(req.file.path);
       db.connectAndOperateOnDb(arr, buildAndPopulateDatabase);
     } catch (err) {
-      console.error(err);
+      res.send(err);
     }
 
     res.redirect('/');
