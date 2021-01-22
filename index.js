@@ -12,22 +12,31 @@ const { rejects } = require('assert');
 const { callbackify } = require('util');
 const app = express();
 const publicDirectoryPath = path.join(__dirname, '/public');
-const upload = multer({ dest: 'uploads/' });
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './uploads/');
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname);
+  },
+});
+const upload = multer({ storage: storage });
+
 app.use(express.static(publicDirectoryPath));
 
 app.get('/', (req, res) => {
   res.render('index.html');
 });
 
-app.get('download/:file', (req, res) => {
+app.get('/download/:file', (req, res) => {
+  db.downloadCSV();
   let path = '/home/download' + req.params.file;
-  console.log(req.params.file);
-
-  if (!fs.existsSync(req.params.file)) {
+  if (!fs.existsSync('./CSV/' + req.params.file)) {
     res.status(404).json({ message: 'file not found' });
     return;
   }
-  res.download(req.params.file, path);
+  res.download('./CSV/' + req.params.file, path);
 });
 
 app.post(
@@ -42,7 +51,7 @@ app.post(
       console.error(err);
     }
 
-    res.send('Succesful Upload');
+    res.redirect('/');
   }
 );
 
@@ -65,3 +74,4 @@ function readKeyToArray(filename, callback) {
     callback(undefined, data.toString().split('\n'));
   });
 }
+console.log(fs.existsSync('./CSV/latest.csv'));
