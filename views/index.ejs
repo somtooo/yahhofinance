@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="../index.js"></script>
 </head>
- 
+
 <body>
   <div class="container">
     <h3>NodeJS/Express - Stock-Data Upload/Download</h3>
@@ -15,16 +16,26 @@
       <div class="form-group">
         <label class="control-label col-sm-2" for="uploadfile">Upload File:</label>
         <div class="col-sm-5">
-          <input type="file" class="form-control"name="stockTickerNames"></input>
+          <input type="file" required class="form-control"name="stockTickerNames"></input>
         </div>
       </div>
-      <div class="form-group"> 
+      <div class="form-group">
           <div class="col-sm-offset-2 col-sm-5">
             <button type="submit" class="btn btn-default" id="btnSubmit">Upload</button>
-            <button type="button" onclick=location.href='/download/latest.csv' class="btn btn-default" ">Download Latest CSV</button>
+            <label> Download CSV</label>
+            <select name="forma" onchange="location = this.value">
+                <% list.forEach(function(c){%>
+                    <option value="" >  </option>
+                    <option value="<%='/download/'+c.name+'.csv/'%>" > <%=c.name%> </option>
+
+                <%})%>
+            </select>
+
           </div>
       </div>
     </form>
+
+
     <hr/>
   </div>
 </body>

@@ -1,9 +1,12 @@
 const yahooFinanceDataV10 = require('../financeData/yahooFinanceDataV10');
+const { downloadCSV } = require('./mongodb');
 
-async function updateDb(arr, db) {
+
+async function updateDb(arr, db, portfolio) {
+  console.log('This is the arr updatedb', arr);
   let updatePromise;
-  for (x of arr) {
-    updatePromise = db.collection('Stock Data').updateOne(
+  for (let x of arr) {
+    updatePromise = db.collection(portfolio).updateOne(
       {
         ticker: x,
       },
@@ -13,28 +16,30 @@ async function updateDb(arr, db) {
     );
     updatePromise
       .then((result) => {
-        console.log(result);
+        // console.log(result);
       })
       .catch((err) => {
         console.log(err);
       });
   }
+  downloadCSV(portfolio)
 }
 
-async function buildAndPopulateDatabase(arr, db) {
-  console.log('This is the arr', arr);
+async function buildAndPopulateDatabase(arr, db, portfolio) {
+  console.log('This is the arr build and populate', arr);
 
-  for (x of arr) {
-    db.collection('Stock Data').insertOne(
+  for (let x of arr) {
+    db.collection(portfolio).insertOne(
       await getDataPromise(x),
       (err, result) => {
         if (err) {
           return console.log(err);
         }
-        console.log(result.ops);
+        // console.log(result.ops);
       }
     );
   }
+  downloadCSV(portfolio)
 }
 
 function getDataPromise(ticker) {
@@ -61,8 +66,10 @@ function getData(ticker, callback) {
               yahooFinanceDataV10.defaultKeyStatistics(ticker, (err, data) => {
                 if (!err) {
                   finalObject = Object.assign(secondObject, data);
-                  // combinedarr.push(finalObject);
+                  cleanData(finalObject);
                   callback(finalObject);
+
+                  // combinedarr.push(finalObject);
                 } else {
                   console.log(err);
                 }
@@ -79,6 +86,18 @@ function getData(ticker, callback) {
       console.log(err);
     }
   });
+}
+
+function cleanData(x) {
+  for (let r in x) {
+    if (typeof x[r] === 'object') {
+      for (let q in x[r]) {
+        if (q === 'raw') {
+          x[r] = x[r][q];
+        }
+      }
+    }
+  }
 }
 
 module.exports = { updateDb, buildAndPopulateDatabase };

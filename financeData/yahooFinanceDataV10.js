@@ -92,5 +92,18 @@ class YahooFinanceDataV10 {
       }
     });
   }
+
+//   cleanData(result) {
+//     for(let r in x){
+//   if(typeof(x[r]) === "object"){
+//     for(let q in x[r]){
+//       if(q === "raw"){
+//         x[r] = x[r][q]
+//       }
+//     }
+//   }
+// }
+
+//   }
 }
 module.exports = new YahooFinanceDataV10();

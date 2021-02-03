@@ -3,18 +3,19 @@ const MongoClient = mongodb.MongoClient;
 const Json2csvParser = require('json2csv').Parser;
 const fs = require('fs');
 
-let data;
+
 const connectionURL =
   process.env.MONGODB_URI ||
-  'mongodb+srv://beatalltech:messi.360@cluster0.5iqzy.mongodb.net/stock-data?retryWrites=true&w=majority';
+  'mongodb://127.0.0.1:27017';
 const databaseName = 'stock-data-tracker';
+const data = {connectionURL,databaseName}
 
-async function connectAndOperateOnDb(arr, operation) {
+async function connectAndOperateOnDb(arr,operation,portfolio) {
   const client = new MongoClient(connectionURL);
 
   try {
     await client.connect();
-    await operation(arr, client.db(databaseName));
+    await operation(arr, client.db(databaseName),portfolio);
   } catch (err) {
     console.error(err);
   } finally {
@@ -22,7 +23,9 @@ async function connectAndOperateOnDb(arr, operation) {
   }
 }
 
-function downloadCSV() {
+
+
+function downloadCSV(portfolio) {
   MongoClient.connect(
     connectionURL,
     { useNewUrlParser: true, useUnifiedTopology: true },
@@ -31,7 +34,7 @@ function downloadCSV() {
 
       client
         .db('stock-data-tracker')
-        .collection('Stock Data')
+        .collection(portfolio)
         .find({})
         .toArray((err, data) => {
           if (err) throw err;
@@ -40,7 +43,7 @@ function downloadCSV() {
           const json2csvParser = new Json2csvParser({ header: true });
           const csvData = json2csvParser.parse(data);
 
-          fs.writeFileSync('./CSV/latest.csv', csvData, function (error) {
+          fs.writeFileSync('./CSV/'+portfolio+'.csv', csvData, function (error) {
             if (error) throw error;
             console.log('Write to latest.csv successfully!');
           });
@@ -51,4 +54,4 @@ function downloadCSV() {
   );
 }
 
-module.exports = { connectAndOperateOnDb, downloadCSV };
+module.exports = { connectAndOperateOnDb, downloadCSV, data, downloadCSV };
