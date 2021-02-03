@@ -54,4 +54,4 @@ function downloadCSV(portfolio) {
   );
 }
 
-module.exports = { connectAndOperateOnDb, downloadCSV, data, downloadCSV };
+module.exports = { connectAndOperateOnDb, downloadCSV, data};
