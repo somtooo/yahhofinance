@@ -3,10 +3,12 @@ const MongoClient = mongodb.MongoClient;
 const Json2csvParser = require('json2csv').Parser;
 const fs = require('fs');
 
+"mongodb+srv://taskapp:messi.360@cluster0.j4ch0.mongodb.net/stock-data-tracker?retryWrites=true&w=majority"
+//mongodb://127.0.0.1:27017
 
 const connectionURL =
   process.env.MONGODB_URI ||
-  'mongodb://127.0.0.1:27017';
+  'mongodb+srv://taskapp:messi.360@cluster0.j4ch0.mongodb.net/stock-data-tracker?retryWrites=true&w=majority'
 const databaseName = 'stock-data-tracker';
 const data = {connectionURL,databaseName}
 
